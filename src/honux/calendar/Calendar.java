@@ -16,7 +16,7 @@ public class Calendar {
 		}
 	}
 
-	public static int MaxDaysOfMonth(int month, int year) {
+	public static int MaxDaysOfMonth(int month, int year ) {
 		if (isLeapYear(year) == true) {
 			return (LeapMaxDays[month - 1]);
 		} else {
@@ -24,15 +24,18 @@ public class Calendar {
 		}
 	}
 
-	public static void PrintCal(int month, int year) {
+	public static void PrintCal(int month, int year, int weekday) {
 		System.out.printf("  <<%4d년 %3d월>>\n", year, month);
 		System.out.println(" SU MO TU WE TH FR SA");
 		System.out.println("--------------------");
-
 		int maxDays = MaxDaysOfMonth(month, year);
-
-		for (int i = 1; i <= maxDays; i++) {
-			if (i % 7 == 0) {
+		//print blank 
+		for (int j = 0; j < weekday; j++){
+			System.out.print("   ");
+		}
+		
+		for (int i = 1 ; i <= maxDays; i++) {
+			if ((i + weekday) % 7 == 0) {
 				System.out.printf("%3d\n", i);
 			} else {
 				System.out.printf("%3d", i);
