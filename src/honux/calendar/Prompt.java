@@ -24,9 +24,13 @@ public class Prompt {
 		 */
 		// while 문 사용
 		int month = 1;
+		int year = 0;
 		while (month != -1) {
+			System.out.println("년을 입력하세요.");
+			System.out.print("YEAR>");
+			year = scanner.nextInt();
 			System.out.println("달을 입력하세요.");
-			System.out.print(Prompt);
+			System.out.print("MONTH>");
 			month = scanner.nextInt();
 
 			if (month == -1) {
@@ -35,8 +39,8 @@ public class Prompt {
 
 				System.out.println("달은 1부터 12사이입니다.");
 			} else {
-				cal.PrintCal(month,2022);
-				System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.MaxDaysOfMonth(month,2022));
+				cal.PrintCal(month,year);
+				System.out.printf("%d월은 %d일까지 있습니다.\n", month, cal.MaxDaysOfMonth(month,year));
 			}
 
 		}
